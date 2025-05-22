@@ -16,15 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const message = form.querySelector('textarea[name="message"]').value;
 
     try {
-      const response = await fetch('https://al-nahda-backend.onrender.com/api/message', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ name, email, phone, subject, message }),
-});
-
-
+      const response = await fetch('/api/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, phone, subject, message }),
+      });
 
       const result = await response.json();
 
